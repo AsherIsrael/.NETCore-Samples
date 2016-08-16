@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 // using System.IO;
 using Microsoft.EntityFrameworkCore;
+using System.Linq;
 
 namespace ConsoleWithDb
 {
@@ -80,7 +81,18 @@ namespace ConsoleWithDb
 
         public static void Show(StudentContext db)
         {
-            Console.WriteLine();
+            Console.WriteLine("What is the ID of the student you would like to see?");
+            string idInput = Console.ReadLine();
+            try
+            {
+                int studentId = Int32.Parse(idInput);
+                Student theStudent = db.Students.Single(student => student.StudentId == studentId);
+                Console.WriteLine($"{theStudent.FirstName} {theStudent.LastName}");
+            }
+            catch
+            {
+                Console.WriteLine("I couldn't find that student");
+            }
         }
 
         public static void Index(StudentContext db)
