@@ -1,0 +1,18 @@
+{
+  "dependencies": {
+    "Microsoft.NETCore.App": {
+      "version": "1.0.0",
+      "type": "platform"
+    }
+  },
+
+  "frameworks": {
+    // Defines what frameworks the project is compatible
+    "netcoreapp1.0": {}
+  },
+
+  "buildOptions": {
+    // Instructs the compiler to create an executable
+    "emitEntryPoint": true
+  }
+}

@@ -1,0 +1,25 @@
+@{
+    
+    string LastGuess = "" + ViewData["LastGuess"];
+
+    string Class;
+    if(LastGuess == "You Got It!"){
+        Class = "correct";
+    }else if(LastGuess == ""){
+        Class = "";
+    }else{
+        Class = "wrong";
+    }
+}
+<div>
+    <h2>Welcome to the Great Number Game</h2>
+    <div class=@Class>
+        <p>@LastGuess</p>
+    </div>
+    <form action="/guess" method="post">
+        <input type="number" step="1" name="Number"/>
+    </form>
+    @if(LastGuess == "You Got It!"){
+        <a href="/reset"><button>Play Again?</button></a>
+    }
+</div>
