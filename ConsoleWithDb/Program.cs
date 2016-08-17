@@ -1,6 +1,5 @@
 using System;
 using System.Collections.Generic;
-// using System.IO;
 using Microsoft.EntityFrameworkCore;
 using System.Linq;
 
@@ -55,6 +54,9 @@ namespace ConsoleWithDb
                             break;
                         case "update":
                             Update(db);
+                            break;
+                        case "destroy":
+                            Destroy(db);
                             break;
                         case "exit":
                             Console.WriteLine("Goodbye!");
@@ -117,6 +119,24 @@ namespace ConsoleWithDb
                 theStudent.FirstName = First_Name;
                 theStudent.LastName = Last_Name;
                 db.SaveChanges();
+            }
+            catch
+            {
+                Console.WriteLine("I couldn't find that student");
+            }
+        }
+
+        public static void Destroy(StudentContext db)
+        {
+            Console.WriteLine("What is the ID of the student you would like to delete?");
+            string idInput = Console.ReadLine();
+            try
+            {
+                int studentId = Int32.Parse(idInput);
+                Student theStudent = db.Students.Single(student => student.StudentId == studentId);
+                db.Students.Remove(theStudent);
+                db.SaveChanges();
+                Console.WriteLine($"{theStudent.FirstName} {theStudent.LastName} has been deleted");
             }
             catch
             {
