@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 // using System.IO;
 using Microsoft.EntityFrameworkCore;
+using System.Linq;
 
 namespace ConsoleWithDb
 {
@@ -52,6 +53,9 @@ namespace ConsoleWithDb
                         case "readall":
                             Index(db);
                             break;
+                        case "update":
+                            Update(db);
+                            break;
                         case "exit":
                             Console.WriteLine("Goodbye!");
                             break;
@@ -60,10 +64,6 @@ namespace ConsoleWithDb
                             break;
                     }
                 } while (choice != "exit");
-                // foreach(var student in db.Students)
-                // {
-                //     Console.WriteLine($"{student.FirstName} {student.LastName}");
-                // }
             }
         }
 
@@ -80,7 +80,18 @@ namespace ConsoleWithDb
 
         public static void Show(StudentContext db)
         {
-            Console.WriteLine();
+            Console.WriteLine("What is the ID of the student you would like to see?");
+            string idInput = Console.ReadLine();
+            try
+            {
+                int studentId = Int32.Parse(idInput);
+                Student theStudent = db.Students.Single(student => student.StudentId == studentId);
+                Console.WriteLine($"{theStudent.FirstName} {theStudent.LastName}");
+            }
+            catch
+            {
+                Console.WriteLine("I couldn't find that student");
+            }
         }
 
         public static void Index(StudentContext db)
@@ -88,6 +99,28 @@ namespace ConsoleWithDb
             foreach(var student in db.Students)
             {
                 Console.WriteLine($"{student.StudentId}: {student.FirstName} {student.LastName}");
+            }
+        }
+
+        public static void Update(StudentContext db)
+        {
+            Console.WriteLine("What is the ID of the student you would like to update?");
+            string idInput = Console.ReadLine();
+            try
+            {
+                int studentId = Int32.Parse(idInput);
+                Student theStudent = db.Students.Single(student => student.StudentId == studentId);
+                Console.Write("Student's new first name: ");
+                string First_Name = Console.ReadLine();
+                Console.Write("Student's new last name: ");
+                string Last_Name = Console.ReadLine();
+                theStudent.FirstName = First_Name;
+                theStudent.LastName = Last_Name;
+                db.SaveChanges();
+            }
+            catch
+            {
+                Console.WriteLine("I couldn't find that student");
             }
         }
     }
