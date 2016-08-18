@@ -1,4 +1,5 @@
 @{
+    Layout = null;
     
     string LastGuess = "" + ViewData["LastGuess"];
 
@@ -11,15 +12,23 @@
         Class = "wrong";
     }
 }
-<div>
-    <h2>Welcome to the Great Number Game</h2>
-    <div class=@Class>
-        <p>@LastGuess</p>
-    </div>
-    <form action="/guess" method="post">
-        <input type="number" step="1" name="Number"/>
-    </form>
-    @if(LastGuess == "You Got It!"){
-        <a href="/reset"><button>Play Again?</button></a>
-    }
-</div>
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset='utf-8'>
+        <title>Number Game</title>
+        <link rel="stylesheet" href="~/css/style.css"/>
+    </head>
+    <body>
+        <h2>Welcome to the Great Number Game</h2>
+        <div class=@Class>
+            <p>@LastGuess</p>
+        </div>
+        <form action="/guess" method="post">
+            <input type="number" step="1" name="Number"/>
+        </form>
+        @if(LastGuess == "You Got It!"){
+            <a href="/reset"><button>Play Again?</button></a>
+        }
+    </body>
+</html>

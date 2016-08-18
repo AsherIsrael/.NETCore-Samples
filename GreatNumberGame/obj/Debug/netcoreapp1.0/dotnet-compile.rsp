@@ -1,5 +1,5 @@
---temp-output:C:\Users\Asher\Desktop\Coding_Dojo\C#\Practice\GreatNumberGame\obj\Debug\netcoreapp1.0\
---out:C:\Users\Asher\Desktop\Coding_Dojo\C#\Practice\GreatNumberGame\bin\Debug\netcoreapp1.0\GreatNumberGame.dll
+--temp-output:C:\Users\Asher\Desktop\Coding_Dojo\C#\Examples\GreatNumberGame\obj\Debug\netcoreapp1.0\
+--out:C:\Users\Asher\Desktop\Coding_Dojo\C#\Examples\GreatNumberGame\bin\Debug\netcoreapp1.0\GreatNumberGame.dll
 --define:DEBUG
 --define:TRACE
 --define:NETCOREAPP1_0
@@ -163,7 +163,7 @@
 --reference:C:\Users\Asher\.nuget\packages\System.Threading.Timer\4.0.1\ref\netstandard1.2\System.Threading.Timer.dll
 --reference:C:\Users\Asher\.nuget\packages\System.Xml.ReaderWriter\4.0.11\ref\netstandard1.3\System.Xml.ReaderWriter.dll
 --reference:C:\Users\Asher\.nuget\packages\System.Xml.XDocument\4.0.11\ref\netstandard1.3\System.Xml.XDocument.dll
---resource:"C:\Users\Asher\Desktop\Coding_Dojo\C#\Practice\GreatNumberGame\obj\Debug\netcoreapp1.0\GreatNumberGamedotnet-compile.deps.json",GreatNumberGame.deps.json
-C:\Users\Asher\Desktop\Coding_Dojo\C#\Practice\GreatNumberGame\Program.cs
-C:\Users\Asher\Desktop\Coding_Dojo\C#\Practice\GreatNumberGame\Startup.cs
-C:\Users\Asher\Desktop\Coding_Dojo\C#\Practice\GreatNumberGame\Controllers\NumberController.cs
+--resource:"C:\Users\Asher\Desktop\Coding_Dojo\C#\Examples\GreatNumberGame\obj\Debug\netcoreapp1.0\GreatNumberGamedotnet-compile.deps.json",GreatNumberGame.deps.json
+C:\Users\Asher\Desktop\Coding_Dojo\C#\Examples\GreatNumberGame\Program.cs
+C:\Users\Asher\Desktop\Coding_Dojo\C#\Examples\GreatNumberGame\Startup.cs
+C:\Users\Asher\Desktop\Coding_Dojo\C#\Examples\GreatNumberGame\Controllers\NumberController.cs
