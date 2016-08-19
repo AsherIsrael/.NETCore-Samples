@@ -1,16 +1,22 @@
 {
   "dependencies": {
-    "Microsoft.NETCore.App": {
-      "version": "1.0.0",
-      "type": "platform"
-    }
+    "Nancy": "2.0.0-barneyrubble"
   },
   "Microsoft.AspNetCore.Server.Kestrel": "1.0.0",
   "Microsoft.AspNetCore.Owin": "1.0.0",
   "Nancy": "2.0.0-barneyrubble",
   "frameworks": {
     // Defines what frameworks the project is compatible
-    "netcoreapp1.0": {}
+    "netcoreapp1.0": {
+        "dependencies": {
+                "Microsoft.AspNetCore.Server.Kestrel": "1.0.0",
+                "Microsoft.AspNetCore.Owin": "1.0.0",
+                "Microsoft.NETCore.App": {
+                    "type": "platform",
+                    "version": "1.0.0"
+                }
+            },
+    }
   },
 
   "buildOptions": {
