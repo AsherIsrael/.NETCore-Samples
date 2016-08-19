@@ -7,8 +7,8 @@
 -debug:full
 -nostdlib
 -nologo
-"C:\Users\Asher\Desktop\Coding_Dojo\C#\Practice\GreatNumberGame\obj\Debug\netcoreapp1.0\dotnet-compile.assemblyinfo.cs"
--out:"C:\Users\Asher\Desktop\Coding_Dojo\C#\Practice\GreatNumberGame\bin\Debug\netcoreapp1.0\GreatNumberGame.dll"
+"C:\Users\Asher\Desktop\Coding_Dojo\C#\Examples\GreatNumberGame\obj\Debug\netcoreapp1.0\dotnet-compile.assemblyinfo.cs"
+-out:"C:\Users\Asher\Desktop\Coding_Dojo\C#\Examples\GreatNumberGame\bin\Debug\netcoreapp1.0\GreatNumberGame.dll"
 -r:"C:\Users\Asher\.nuget\packages\Microsoft.AspNetCore.Antiforgery\1.0.0\lib\netstandard1.3\Microsoft.AspNetCore.Antiforgery.dll"
 -r:"C:\Users\Asher\.nuget\packages\Microsoft.AspNetCore.Authorization\1.0.0\lib\netstandard1.3\Microsoft.AspNetCore.Authorization.dll"
 -r:"C:\Users\Asher\.nuget\packages\Microsoft.AspNetCore.Cors\1.0.0\lib\netstandard1.3\Microsoft.AspNetCore.Cors.dll"
@@ -67,7 +67,6 @@
 -r:"C:\Users\Asher\.nuget\packages\Microsoft.Extensions.Localization.Abstractions\1.0.0\lib\netstandard1.0\Microsoft.Extensions.Localization.Abstractions.dll"
 -r:"C:\Users\Asher\.nuget\packages\Microsoft.Extensions.Logging\1.0.0\lib\netstandard1.1\Microsoft.Extensions.Logging.dll"
 -r:"C:\Users\Asher\.nuget\packages\Microsoft.Extensions.Logging.Abstractions\1.0.0\lib\netstandard1.1\Microsoft.Extensions.Logging.Abstractions.dll"
--r:"C:\Users\Asher\.nuget\packages\Microsoft.Extensions.Logging.Console\1.0.0\lib\netstandard1.3\Microsoft.Extensions.Logging.Console.dll"
 -r:"C:\Users\Asher\.nuget\packages\Microsoft.Extensions.ObjectPool\1.0.0\lib\netstandard1.3\Microsoft.Extensions.ObjectPool.dll"
 -r:"C:\Users\Asher\.nuget\packages\Microsoft.Extensions.Options\1.0.0\lib\netstandard1.0\Microsoft.Extensions.Options.dll"
 -r:"C:\Users\Asher\.nuget\packages\Microsoft.Extensions.PlatformAbstractions\1.0.0\lib\netstandard1.3\Microsoft.Extensions.PlatformAbstractions.dll"
@@ -159,7 +158,6 @@
 -r:"C:\Users\Asher\.nuget\packages\System.Threading.Timer\4.0.1\ref\netstandard1.2\System.Threading.Timer.dll"
 -r:"C:\Users\Asher\.nuget\packages\System.Xml.ReaderWriter\4.0.11\ref\netstandard1.3\System.Xml.ReaderWriter.dll"
 -r:"C:\Users\Asher\.nuget\packages\System.Xml.XDocument\4.0.11\ref\netstandard1.3\System.Xml.XDocument.dll"
--resource:"C:\Users\Asher\Desktop\Coding_Dojo\C#\Practice\GreatNumberGame\obj\Debug\netcoreapp1.0\GreatNumberGamedotnet-compile.deps.json",GreatNumberGame.deps.json
-"C:\Users\Asher\Desktop\Coding_Dojo\C#\Practice\GreatNumberGame\Program.cs"
-"C:\Users\Asher\Desktop\Coding_Dojo\C#\Practice\GreatNumberGame\Startup.cs"
-"C:\Users\Asher\Desktop\Coding_Dojo\C#\Practice\GreatNumberGame\Controllers\NumberController.cs"
+-resource:"C:\Users\Asher\Desktop\Coding_Dojo\C#\Examples\GreatNumberGame\obj\Debug\netcoreapp1.0\GreatNumberGamedotnet-compile.deps.json",GreatNumberGame.deps.json
+"C:\Users\Asher\Desktop\Coding_Dojo\C#\Examples\GreatNumberGame\Program.cs"
+"C:\Users\Asher\Desktop\Coding_Dojo\C#\Examples\GreatNumberGame\Startup.cs"

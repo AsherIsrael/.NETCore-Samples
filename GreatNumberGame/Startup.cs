@@ -2,13 +2,14 @@ using System;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.DependencyInjection;
-using Microsoft.Extensions.Logging;
 
 
 namespace GreatNumberGame
 {
+    
     public class Startup
     {
+
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddMvc();
@@ -16,14 +17,11 @@ namespace GreatNumberGame
             services.AddSession();
         }
 
-        public void Configure(IApplicationBuilder app, ILoggerFactory loggerFactory)
+        public void Configure(IApplicationBuilder app)
         {
-            loggerFactory.AddConsole();
 
             app.UseSession();
             app.UseStaticFiles();
-
-            
 
             app.UseMvc( routes => {
                 routes.MapRoute(
