@@ -12,14 +12,17 @@ public class Startup
     }
 
     public void Configure(IApplicationBuilder app)
-    {            
+    {           
+
         var router = new RouteBuilder(app);
 
-        router.MapGet("hello", context => 
+        router.MapGet("hello", context =>
         {
+            
             Console.WriteLine("Hello World!");
-            return;
-        });
+
+            return context.Response.WriteAsync("");
+        }); 
         
         var routes = router.Build();
         app.UseRouter(routes);
