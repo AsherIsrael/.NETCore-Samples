@@ -12,6 +12,7 @@ namespace GreatNumberGame
 
         public static void Main(string[] args)
         {
+
             var host = new WebHostBuilder()
                 .UseKestrel()
                 .UseContentRoot(Directory.GetCurrentDirectory())
@@ -26,7 +27,7 @@ namespace GreatNumberGame
     {
 
         [HttpGet]
-        public IActionResult index(string result)
+        public IActionResult index()
         {
 
             if(HttpContext.Session.GetInt32("TheNumber") == null)
@@ -34,16 +35,17 @@ namespace GreatNumberGame
                 HttpContext.Session.SetInt32("TheNumber", (new Random().Next(1, 100)));
             }
 
-            if(result == null)
+            if(TempData["result"] == null)
             {
                 ViewData["LastGuess"] = "";
             }
             else
             {
-                ViewData["LastGuess"] = result;
+                ViewData["LastGuess"] = TempData["result"];
             }
 
             ViewData["TheNumber"] = HttpContext.Session.GetInt32("TheNumber");
+
             return View("index");
         }
 
@@ -51,28 +53,29 @@ namespace GreatNumberGame
         public IActionResult guess(int Number)
         {
 
-            string result;
             if(Number > HttpContext.Session.GetInt32("TheNumber"))
             {
-                result = "Too High";
+                TempData["result"] = "Too High";
             }
             else if(Number < HttpContext.Session.GetInt32("TheNumber"))
             {
-                result = "Too Low";
+                TempData["result"] = "Too Low";
             }
             else
             {
-                result = "You Got It!";
+                TempData["result"] = "You Got It!";
             }
-            
-            return index(result);
+
+            return RedirectToAction("index");
         }
 
         [HttpGet]
         public IActionResult reset()
         {
+
             HttpContext.Session.Clear();
-            return index(null);
+
+            return RedirectToAction("index");
         }
     }
 }
