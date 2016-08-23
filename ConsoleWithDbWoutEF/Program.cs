@@ -72,7 +72,7 @@ namespace ConsoleWithDb
                 Console.WriteLine("I couldn't find that student");
             }
         }
-
+        
         public static void Index()
         {
             string query = "SELECT * FROM students";
