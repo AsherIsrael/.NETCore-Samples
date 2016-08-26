@@ -1,0 +1,14 @@
+@model IEnumerable<QuotingDojoWithEF.Models.Quote>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h1>Here are the awesome quotes!</h1>
+
+@foreach ( var quote in Model)
+{
+    <p>@quote.QuoteText</p>
+    <p class="username">-@quote.Name at @quote.CreatedAt</p>
+    <hr>
+}

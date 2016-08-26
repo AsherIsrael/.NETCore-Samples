@@ -1,0 +1,17 @@
+@model QuotingDojoWithEF.Models.Quote
+
+@{
+    ViewBag.Title = "New Quote";
+}
+
+<h1>Welcome to Quoting Dojo</h1>
+
+<form asp-controller="Quotes" asp-action="Create" method="post" role="form">
+    <div asp-validation-summary="All"></div>
+    <label asp-for="Name"></label>
+    <input asp-for="Name"/>
+    <label asp-for="QuoteText"></label>
+    <input asp-for="QuoteText"/>
+    <input type="submit" value="Add my quote!"/>
+</form>
+<a class="formElement" asp-controller="Quotes" asp-action="Index"><button>Skip to quotes!</button></a>
