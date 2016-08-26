@@ -1,0 +1,21 @@
+@{
+    
+}
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>View Quotes</title>
+    </head>
+    <body>
+        <h1>Here are the awesome quotes!</h1>
+        @{
+            foreach ( var quote in @ViewData["quotes"] as Dictionary<string, object>[])
+            {
+                <p>@quote["Quote"]</p>
+                <p>\t -@quote["Name"]</p>
+                <hr>
+            }
+        }
+    </body>
+</html>

@@ -1,0 +1,26 @@
+@{
+    <!--List<string> Errors = @ViewData["Errors"] as List<string>;-->
+}
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Add a Quote!</title>
+    </head>
+    <body>
+        <h1>Welcome to Quoting Dojo</h1>
+        @{
+            foreach ( string error in @ViewData["Errors"] as string[])
+            {
+                <p>@error</p>
+            }
+       
+        }
+        <form action="/quotes" method="post">
+            Your Name: <input type="text" name="name" value=""/><br/>
+            Your Quote: <textarea name="quote" value=""></textarea>
+            <button type="submit">Add my quote!</button>
+        </form>
+        <a href="/quotes"><button>Skip to quotes!</button></a>
+    </body>
+</html>
