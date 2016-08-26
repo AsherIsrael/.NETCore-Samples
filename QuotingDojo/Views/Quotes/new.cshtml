@@ -6,6 +6,7 @@
     <head>
         <meta charset="UTF-8">
         <title>Add a Quote!</title>
+        <link rel="stylesheet" href="~/css/style.css"/>
     </head>
     <body>
         <h1>Welcome to Quoting Dojo</h1>
@@ -17,10 +18,10 @@
        
         }
         <form action="/quotes" method="post">
-            Your Name: <input type="text" name="name" value=""/><br/>
-            Your Quote: <textarea name="quote" value=""></textarea>
-            <button type="submit">Add my quote!</button>
+            <input class="formElement" type="text" name="name" placeholder="Your name..."/>
+            <textarea class="formElement" name="quote" placeholder="Your Quote..."></textarea>
+            <button class="formElement" type="submit">Add my quote!</button>
         </form>
-        <a href="/quotes"><button>Skip to quotes!</button></a>
+        <a class="formElement" href="/quotes"><button>Skip to quotes!</button></a>
     </body>
 </html>

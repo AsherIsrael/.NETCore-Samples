@@ -6,6 +6,7 @@
     <head>
         <meta charset="UTF-8">
         <title>View Quotes</title>
+        <link rel="stylesheet" href="~/css/style.css"/>
     </head>
     <body>
         <h1>Here are the awesome quotes!</h1>
@@ -13,7 +14,7 @@
             foreach ( var quote in @ViewData["quotes"] as Dictionary<string, object>[])
             {
                 <p>@quote["Quote"]</p>
-                <p>\t -@quote["Name"]</p>
+                <p class="username">-@quote["Name"] at @quote["createdAt"]</p>
                 <hr>
             }
         }
