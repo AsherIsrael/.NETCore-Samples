@@ -1,5 +1,5 @@
-﻿using System;
-using BCrypt.Net;
+﻿using System.IO;
+using Microsoft.AspNetCore.Hosting;
 
 namespace LoginReg
 {
@@ -7,7 +7,13 @@ namespace LoginReg
     {
         public static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            IWebHost host = new WebHostBuilder()
+                .UseKestrel()
+                .UseContentRoot(Directory.GetCurrentDirectory())
+                .UseStartup<Startup>()
+                .Build();
+
+            host.Run();
         }
     }
 }

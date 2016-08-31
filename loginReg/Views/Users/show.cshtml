@@ -1,0 +1,13 @@
+@{
+    Dictionary<string, object> user = ViewData["User"] as Dictionary<string, object>;
+}
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Document</title>
+    </head>
+    <body>
+        <h2>Welcome, @user["FirstName"]!</h2>
+    </body>
+</html>
