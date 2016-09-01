@@ -1,4 +1,3 @@
-
 using LoginRegWithEF.Models;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.EntityFrameworkCore;
@@ -24,32 +23,7 @@ namespace LoginRegWithEF
             app.UseSession();
             app.UseStaticFiles();
 
-            app.UseMvc( routes =>
-            {
-                routes.MapRoute(
-                    name: "New",
-                    template: "",
-                    defaults: new {Controller = "Users", action = "Register"}
-                );
-
-                routes.MapRoute(
-                    name: "Register",
-                    template: "register",
-                    defaults: new {Controller = "Users", action = "Register"}
-                );
-
-                routes.MapRoute(
-                    name: "Show",
-                    template: "user",
-                    defaults: new {Controller = "Users", action = "Show"}
-                );
-
-                routes.MapRoute(
-                    name: "Login",
-                    template: "login",
-                    defaults: new {Controller = "Users", action = "Login"}
-                );
-            });
+            app.UseMvc();
         }
     }
 }

@@ -1,11 +1,9 @@
-using System.Collections.Generic;
-using System.Text.RegularExpressions;
 using Microsoft.AspNetCore.Mvc;
 using System;
 using Microsoft.AspNetCore.Http;
 using LoginRegWithEF.Models;
 using System.Linq;
-using System.Security.Cryptography;
+using Microsoft.AspNetCore.Identity;
 
 namespace LoginRegWithEF.Controllers
 {
@@ -18,33 +16,33 @@ namespace LoginRegWithEF.Controllers
             _context = context;
         }
         [HttpGet]
+        [Route("")]
         public IActionResult Register()
         {
             Console.WriteLine("new");
-            if(TempData["Errors"] != null )
-            {
-                ViewData["Errors"] = TempData["Errors"];
-            }
-            else
-            {
-                ViewData["Errors"] = new string[0];
-            }
             return View();
         }
 
         [HttpPost]
+        [Route("register")]
         public IActionResult Register(Register user)
         {
             Console.WriteLine("register");
             if(ModelState.IsValid)
             {
-                User newUser = new User{
+                User newUser = new User
+                {
                     FirstName = user.FirstName, 
                     LastName = user.LastName, 
                     Email = user.Email, 
                     Password = user.Password, 
                     CreatedAt = DateTime.Now, 
-                    UpdatedAt = DateTime.Now};
+                    UpdatedAt = DateTime.Now
+                };
+
+                PasswordHasher<User> hasher = new PasswordHasher<User>();
+                newUser.Password = hasher.HashPassword(newUser, user.Password);
+
                 _context.User.Add(newUser);
                 Console.WriteLine(_context.SaveChanges());
                 int newUserId = _context.User.Max(u => u.UserId);
@@ -55,24 +53,32 @@ namespace LoginRegWithEF.Controllers
         }
 
         [HttpPost]
-        public IActionResult Login(string Email, string Password)
+        [Route("login")]
+        public IActionResult Login(string Email = " ", string Password = " ")
         {
             Console.WriteLine("login");
 
-            User checkUser = _context.User.Single(u => u.Email == Email);
-            if(checkUser != null)
+            User checkUser = _context.User.Where(u => u.Email == Email).SingleOrDefault();
+            Console.WriteLine((checkUser == null));
+            Console.WriteLine("after this");
+            if(checkUser != null && Password != null)
             {
-                if(Password == checkUser.Password)
+            
+                PasswordHasher<User> hasher = new PasswordHasher<User>();
+
+                if(0 != hasher.VerifyHashedPassword(checkUser, checkUser.Password, Password))
                 {
                     HttpContext.Session.SetInt32("currentUser", checkUser.UserId);
                     return RedirectToAction("Show");
                 }
+                
             }
             ViewData["Error"] = "Email or Password was incorrect";
             return View();
         }
 
         [HttpGet]
+        [Route("login")]
         public IActionResult Login()
         {
             ViewData["Error"] = "";
@@ -80,6 +86,7 @@ namespace LoginRegWithEF.Controllers
         }
 
         [HttpGet]
+        [Route("user")]
         public IActionResult Show()
         {
             Console.WriteLine("show");
