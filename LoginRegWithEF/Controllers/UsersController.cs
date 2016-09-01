@@ -19,7 +19,6 @@ namespace LoginRegWithEF.Controllers
         [Route("")]
         public IActionResult Register()
         {
-            Console.WriteLine("new");
             return View();
         }
 
@@ -27,7 +26,6 @@ namespace LoginRegWithEF.Controllers
         [Route("register")]
         public IActionResult Register(Register user)
         {
-            Console.WriteLine("register");
             if(ModelState.IsValid)
             {
                 User newUser = new User
@@ -56,7 +54,6 @@ namespace LoginRegWithEF.Controllers
         [Route("login")]
         public IActionResult Login(string Email = " ", string Password = " ")
         {
-            Console.WriteLine("login");
 
             User checkUser = _context.User.Where(u => u.Email == Email).SingleOrDefault();
             Console.WriteLine((checkUser == null));
@@ -89,7 +86,6 @@ namespace LoginRegWithEF.Controllers
         [Route("user")]
         public IActionResult Show()
         {
-            Console.WriteLine("show");
             return View(_context.User.Single(u => u.UserId == HttpContext.Session.GetInt32("currentUser")));
         }
     }

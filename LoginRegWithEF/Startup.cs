@@ -1,8 +1,10 @@
 using LoginRegWithEF.Models;
 using Microsoft.AspNetCore.Builder;
+using Microsoft.AspNetCore.Hosting;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
+using System.IO;
 
 namespace LoginRegWithEF
 {
@@ -24,6 +26,20 @@ namespace LoginRegWithEF
             app.UseStaticFiles();
 
             app.UseMvc();
+        }
+    }
+
+    public class Program
+    {
+        public static void Main(string[] args)
+        {
+            IWebHost host = new WebHostBuilder()
+                .UseKestrel()
+                .UseContentRoot(Directory.GetCurrentDirectory())
+                .UseStartup<Startup>()
+                .Build();
+
+            host.Run();
         }
     }
 }
