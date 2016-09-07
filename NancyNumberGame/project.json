@@ -1,0 +1,24 @@
+{
+  "version": "1.0.0-*",
+  "buildOptions": {
+    "debugType": "portable",
+    "emitEntryPoint": true,
+    "copyToOutput": ["Views/Number/*", "Content/*"]
+  },
+  "dependencies": {
+    "Microsoft.NETCore.App": {
+      "type": "platform",
+      "version": "1.0.0"
+    },
+    "Nancy": "2.0.0-barneyrubble",
+    "Microsoft.AspNetCore.Server.Kestrel": "1.0.0",
+    "Microsoft.AspNetCore.Owin": "1.0.0",
+    "Microsoft.Extensions.Logging.Console": "1.0.0",
+    "Microsoft.AspNetCore.Session": "1.0.0"
+  },
+  "frameworks": {
+    "netcoreapp1.0": {
+      "dependencies": {}
+    }
+  }
+}

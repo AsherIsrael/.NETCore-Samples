@@ -1,0 +1,17 @@
+
+<html>
+    <head>
+        <title>Number Game</title>
+    </head>
+    <body>
+        <h2>Welcome to the Great Number Game</h2>
+        <link rel="stylesheet" type="text/css" href="/Content/style.css"/>
+        <div class=@ViewBag.Class>
+            <p>@ViewBag.LastGuess</p>
+        </div>
+        <form action="/guess" method="post">
+            <input type="number" step="1" name="Number"/>
+        </form>
+     
+    </body>
+</html>
