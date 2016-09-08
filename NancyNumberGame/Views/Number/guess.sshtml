@@ -12,6 +12,8 @@
         <form action="/guess" method="post">
             <input type="number" step="1" name="Number"/>
         </form>
-     
+     @If.Context.ViewBag.Restart
+        <a href="/reset"><button>Play Again?</button></a>
+     @EndIf
     </body>
 </html>
