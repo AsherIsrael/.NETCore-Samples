@@ -1,0 +1,34 @@
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>weatherapi</title>
+        <script src="https://code.jquery.com/jquery-3.1.0.min.js"
+            integrity="sha256-cCueBR6CsyA4/9szpPfrX3s49M9vUU5BgtiJj06wt/s="
+            crossorigin="anonymous"></script>
+        <script type="text/javascript">
+            $(document).on('submit', 'form', function(e){
+                e.preventDefault();
+                var $url = "http://api.openweathermap.org/data/2.5/weather?q=" + $("#Place").val() + "&APPID=f9866c812d06c0bb63ca6133a9714bdf";
+                $.get($url, function(data){
+                    console.log(data);
+                    var converted_temp = ((data.main.temp - 273.15)*1.8+32);
+                    $("#content").html('<h1>city: ' + data.name + 
+                        '</h1><h3>Current Weather: '+ data.weather[0].description + '</h3><h4>Current Temp: '+ parseInt(converted_temp) + '</h4>');
+                });
+                $("#Place").val("");
+            });
+        </script>
+    </head>
+    <body>
+        <p>Location name</p>
+        <form>
+            <input type="text" id="Place">
+        </form>
+        <div id="content"></div>
+    </body>
+</html>

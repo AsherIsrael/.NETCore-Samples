@@ -1,0 +1,42 @@
+.inline{
+	display: inline;
+}
+
+.wrapper{
+	width: 100%;
+}
+
+.gold_box{
+	width: 5%;
+	display: inline-block;
+	text-align: center;
+	outline: 2px solid black;
+}
+
+	.gold_box *{
+		display: inline-block;
+	}
+
+.location{
+	text-align: center;
+	width: 15%;
+	height: 10em;
+	display: inline-block;
+	outline: 2px solid black;
+	margin: 1em;
+}
+
+.log{
+	overflow-y: scroll;
+	width: 67%;
+	height: 10em;
+	outline: 2px solid black;
+}
+
+.green{
+	color: green;
+}
+
+.red{
+	color: red;
+}

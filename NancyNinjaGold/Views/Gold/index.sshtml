@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Document</title>
+		<link rel="stylesheet" type="text/css" href="/Content/style.css"/>
+    </head>
+    <body>
+        <div class="wrapper">
+			<p class="inline">Your Gold: </p>
+			<div class="gold_box">
+				<p>@ViewBag.Info.Gold</p>
+			</div>
+			<br>
+            <a href="/reset"><button>Reset</button></a>
+			<br>
+			<div class="location">
+				<h1>Farm</h1>
+				<h2>(earns 10-20 gold)</h2>
+				<form action="/process_money" method="post">
+                    <input type="hidden" name="Building" value="farm"/>
+					<input type="submit" value="Find Gold!">
+				</form>
+			</div>
+			<div class="location">
+				<h1>Cave</h1>
+				<h2>(earns 5-10 gold)</h2>
+				<form action="/process_money" method="post">
+                    <input type="hidden" name="Building" value="cave"/>
+					<input type="submit" value="Find Gold!">
+				</form>
+			</div>
+			<div class="location">
+				<h1>House</h1>
+				<h2>(earns 2-5 gold)</h2>
+				<form action="/process_money" method="post">
+                    <input type="hidden" name="Building" value="house"/>
+					<input type="submit" value="Find Gold!">
+				</form>
+			</div>
+			<div class="location">
+				<h1>Casino</h1>
+				<h2>(earns/takes 0-50 gold)</h2>
+				<form action="/process_money" method="post">
+                    <input type="hidden" name="Building" value="casino"/>
+					<input type="submit" value="Find Gold!">
+				</form>
+			</div>
+			<div class="activity_log">
+				<p>Activities:</p>
+				<div class="log">
+                    @Each.Context.Info.Activities
+                        <p>@Current</p>
+                    @EndEach
+				</div>
+			</div>
+		</div>
+    </body>
+</html>
