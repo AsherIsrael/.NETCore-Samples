@@ -2,7 +2,7 @@ using System.ComponentModel.DataAnnotations;
 
 namespace LoginRegWithEF.Models
 {
-    public partial class Register
+    public class Register
     {
         [Required]
         [MinLength(2)]

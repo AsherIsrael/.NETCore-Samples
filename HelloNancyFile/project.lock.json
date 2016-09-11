@@ -8210,13 +8210,13 @@
     }
   },
   "projectFileDependencyGroups": {
-    "": [],
-    ".NETCoreApp,Version=v1.0": [
+    "": [
       "Microsoft.AspNetCore.Owin >= 1.0.0",
       "Microsoft.AspNetCore.Server.Kestrel >= 1.0.0",
       "Microsoft.NETCore.App >= 1.0.0",
       "Nancy >= 2.0.0-barneyrubble"
-    ]
+    ],
+    ".NETCoreApp,Version=v1.0": []
   },
   "tools": {},
   "projectFileToolGroups": {}

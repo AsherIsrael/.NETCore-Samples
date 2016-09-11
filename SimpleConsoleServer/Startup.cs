@@ -1,4 +1,3 @@
-using System;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.DependencyInjection;
@@ -14,17 +13,15 @@ public class Startup
     public void Configure(IApplicationBuilder app)
     {           
 
-        var router = new RouteBuilder(app);
+        RouteBuilder router = new RouteBuilder(app);
 
         router.MapGet("hello", context =>
         {
-            
-            Console.WriteLine("Hello World!");
 
-            return context.Response.WriteAsync("");
+            return context.Response.WriteAsync("Hello World!");
         }); 
         
-        var routes = router.Build();
+        IRouter routes = router.Build();
         app.UseRouter(routes);
     }
 }

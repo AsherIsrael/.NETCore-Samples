@@ -3,7 +3,7 @@ using System.ComponentModel.DataAnnotations;
 
 namespace LoginRegWithEF.Models
 {
-    public partial class User
+    public class User
     {
         public int UserId { get; set; }
         [Required]

@@ -17,6 +17,6 @@ namespace QuotingDojoWithEF.Models
                 entity.Property( e => e.QuoteText).IsRequired();
             });
         }
-        public virtual DbSet<Quote> Quote { get; set; }
+        public DbSet<Quote> Quote { get; set; }
     }
 }
