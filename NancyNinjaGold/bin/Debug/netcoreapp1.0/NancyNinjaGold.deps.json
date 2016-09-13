@@ -1,7 +1,7 @@
 {
   "runtimeTarget": {
     "name": ".NETCoreApp,Version=v1.0",
-    "signature": "37500ec970b38e6b06438fb5ed903ff9d7c58743"
+    "signature": "6ccdc1c3a4113f32b87f042884d78bb82813cb7b"
   },
   "compilationOptions": {},
   "targets": {
@@ -12,10 +12,18 @@
           "Microsoft.AspNetCore.Server.Kestrel": "1.0.0",
           "Microsoft.AspNetCore.Owin": "1.0.0",
           "Microsoft.Extensions.Logging.Console": "1.0.0",
-          "Microsoft.AspNetCore.Session": "1.0.0"
+          "Microsoft.AspNetCore.Session": "1.0.0",
+          "Nancy.Session.InMemory": "0.9.1-pre",
+          "Nancy.Session.Persistable": "0.9.1-pre",
+          "FSharp.Core": "4.0.1.7-alpha"
         },
         "runtime": {
           "NancyNinjaGold.dll": {}
+        }
+      },
+      "FSharp.Core/4.0.1.7-alpha": {
+        "runtime": {
+          "lib/netstandard1.6/FSharp.Core.dll": {}
         }
       },
       "Microsoft.AspNetCore.Cryptography.Internal/1.0.0": {
@@ -309,6 +317,22 @@
           "lib/netstandard1.6/Nancy.dll": {}
         }
       },
+      "Nancy.Session.InMemory/0.9.1-pre": {
+        "dependencies": {
+          "Nancy": "2.0.0-barneyrubble"
+        },
+        "runtime": {
+          "lib/netstandard1.6/Nancy.Session.InMemory.dll": {}
+        }
+      },
+      "Nancy.Session.Persistable/0.9.1-pre": {
+        "dependencies": {
+          "Nancy": "2.0.0-barneyrubble"
+        },
+        "runtime": {
+          "lib/netstandard1.6/Nancy.Session.Persistable.dll": {}
+        }
+      },
       "Newtonsoft.Json/9.0.1": {
         "dependencies": {
           "System.Runtime.Serialization.Primitives": "4.1.1"
@@ -382,6 +406,11 @@
       "type": "project",
       "serviceable": false,
       "sha512": ""
+    },
+    "FSharp.Core/4.0.1.7-alpha": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-y/ibFVeeXLA+wdNXfwgjGpoJyq33S0x49kRsQLuwkhDuWPNz0qeIrf83a80yZhfQVOAdLjA7JieG+xGje832Ng=="
     },
     "Microsoft.AspNetCore.Cryptography.Internal/1.0.0": {
       "type": "package",
@@ -552,6 +581,16 @@
       "type": "package",
       "serviceable": true,
       "sha512": "sha512-ffOBZdJd+uiI1J+tOGdjL6+YUyque8OrX4CeXT8DHJQORlPNOFww1KskXtaW20OGefaSXf1LGh07XDGQyH4iQQ=="
+    },
+    "Nancy.Session.InMemory/0.9.1-pre": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-yHO0adD1I02KB85GGTpOYruOpU2KXleUbiWbmZGbhemjblAjFJYeoz4vSBwvG6MqjQJzT1x58xJ9odD5KW9FTw=="
+    },
+    "Nancy.Session.Persistable/0.9.1-pre": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-ym9P+MTQMUtdGOp0wqmu5OZ4yxbKF2FpLrFFD8x80RvaonusbaXStMcqSk4Gw5LjcMnjVWf/ovcADXDl5mWNUg=="
     },
     "Newtonsoft.Json/9.0.1": {
       "type": "package",

@@ -3,6 +3,28 @@
   "version": 2,
   "targets": {
     ".NETCoreApp,Version=v1.0": {
+      "FSharp.Core/4.0.1.7-alpha": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.NETCore.Platforms": "1.0.1",
+          "NETStandard.Library": "1.6.0",
+          "System.Linq.Expressions": "4.1.0",
+          "System.Linq.Queryable": "4.0.1",
+          "System.Net.Requests": "4.0.11",
+          "System.Reflection.Emit": "4.0.1",
+          "System.Reflection.TypeExtensions": "4.1.0",
+          "System.Runtime.Loader": "4.0.0",
+          "System.Threading.Tasks.Parallel": "4.0.1",
+          "System.Threading.Thread": "4.0.0",
+          "System.Threading.ThreadPool": "4.0.10"
+        },
+        "compile": {
+          "lib/netstandard1.6/FSharp.Core.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard1.6/FSharp.Core.dll": {}
+        }
+      },
       "Libuv/1.9.0": {
         "type": "package",
         "dependencies": {
@@ -923,6 +945,30 @@
           "lib/netstandard1.6/Nancy.dll": {}
         }
       },
+      "Nancy.Session.InMemory/0.9.1-pre": {
+        "type": "package",
+        "dependencies": {
+          "Nancy": "2.0.0-barneyrubble"
+        },
+        "compile": {
+          "lib/netstandard1.6/Nancy.Session.InMemory.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard1.6/Nancy.Session.InMemory.dll": {}
+        }
+      },
+      "Nancy.Session.Persistable/0.9.1-pre": {
+        "type": "package",
+        "dependencies": {
+          "Nancy": "2.0.0-barneyrubble"
+        },
+        "compile": {
+          "lib/netstandard1.6/Nancy.Session.Persistable.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard1.6/Nancy.Session.Persistable.dll": {}
+        }
+      },
       "NETStandard.Library/1.6.0": {
         "type": "package",
         "dependencies": {
@@ -1534,7 +1580,11 @@
           "ref/netstandard1.3/System.IO.Compression.dll": {}
         },
         "runtimeTargets": {
-          "runtimes/win/lib/netstandard1.3/_._": {
+          "runtimes/unix/lib/netstandard1.3/System.IO.Compression.dll": {
+            "assetType": "runtime",
+            "rid": "unix"
+          },
+          "runtimes/win/lib/netstandard1.3/System.IO.Compression.dll": {
             "assetType": "runtime",
             "rid": "win"
           }
@@ -1557,7 +1607,7 @@
           "ref/netstandard1.3/System.IO.Compression.ZipFile.dll": {}
         },
         "runtime": {
-          "lib/netstandard1.3/_._": {}
+          "lib/netstandard1.3/System.IO.Compression.ZipFile.dll": {}
         }
       },
       "System.IO.FileSystem/4.0.1": {
@@ -1752,7 +1802,7 @@
           "ref/netstandard1.0/System.Linq.Queryable.dll": {}
         },
         "runtime": {
-          "lib/netstandard1.3/_._": {}
+          "lib/netstandard1.3/System.Linq.Queryable.dll": {}
         }
       },
       "System.Net.Http/4.1.0": {
@@ -1789,7 +1839,11 @@
           "ref/netstandard1.3/System.Net.Http.dll": {}
         },
         "runtimeTargets": {
-          "runtimes/win/lib/netstandard1.3/_._": {
+          "runtimes/unix/lib/netstandard1.6/System.Net.Http.dll": {
+            "assetType": "runtime",
+            "rid": "unix"
+          },
+          "runtimes/win/lib/netstandard1.3/System.Net.Http.dll": {
             "assetType": "runtime",
             "rid": "win"
           }
@@ -1860,7 +1914,11 @@
           "ref/netstandard1.3/System.Net.Requests.dll": {}
         },
         "runtimeTargets": {
-          "runtimes/win/lib/netstandard1.3/_._": {
+          "runtimes/unix/lib/netstandard1.3/System.Net.Requests.dll": {
+            "assetType": "runtime",
+            "rid": "unix"
+          },
+          "runtimes/win/lib/netstandard1.3/System.Net.Requests.dll": {
             "assetType": "runtime",
             "rid": "win"
           }
@@ -1934,7 +1992,7 @@
           "ref/netstandard1.3/System.Net.WebHeaderCollection.dll": {}
         },
         "runtime": {
-          "lib/netstandard1.3/_._": {}
+          "lib/netstandard1.3/System.Net.WebHeaderCollection.dll": {}
         }
       },
       "System.Net.WebSockets/4.0.0": {
@@ -2027,7 +2085,7 @@
           "System.Runtime": "4.1.0"
         },
         "compile": {
-          "ref/netstandard1.1/_._": {}
+          "ref/netstandard1.1/System.Reflection.Emit.dll": {}
         },
         "runtime": {
           "lib/netstandard1.3/System.Reflection.Emit.dll": {}
@@ -2041,7 +2099,7 @@
           "System.Runtime": "4.1.0"
         },
         "compile": {
-          "ref/netstandard1.0/_._": {}
+          "ref/netstandard1.0/System.Reflection.Emit.ILGeneration.dll": {}
         },
         "runtime": {
           "lib/netstandard1.3/System.Reflection.Emit.ILGeneration.dll": {}
@@ -2232,10 +2290,10 @@
           "System.Runtime": "4.1.0"
         },
         "compile": {
-          "ref/netstandard1.5/_._": {}
+          "ref/netstandard1.5/System.Runtime.Loader.dll": {}
         },
         "runtime": {
-          "lib/netstandard1.5/_._": {}
+          "lib/netstandard1.5/System.Runtime.Loader.dll": {}
         }
       },
       "System.Runtime.Numerics/4.0.1": {
@@ -2722,7 +2780,7 @@
           "ref/netstandard1.1/System.Threading.Tasks.Parallel.dll": {}
         },
         "runtime": {
-          "lib/netstandard1.3/_._": {}
+          "lib/netstandard1.3/System.Threading.Tasks.Parallel.dll": {}
         }
       },
       "System.Threading.Thread/4.0.0": {
@@ -2902,6 +2960,47 @@
     }
   },
   "libraries": {
+    "FSharp.Core/4.0.1.7-alpha": {
+      "sha512": "y/ibFVeeXLA+wdNXfwgjGpoJyq33S0x49kRsQLuwkhDuWPNz0qeIrf83a80yZhfQVOAdLjA7JieG+xGje832Ng==",
+      "type": "package",
+      "path": "FSharp.Core/4.0.1.7-alpha",
+      "files": [
+        "FSharp.Core.4.0.1.7-alpha.nupkg.sha512",
+        "FSharp.Core.nuspec",
+        "lib/net20/FSharp.Core.dll",
+        "lib/net20/FSharp.Core.optdata",
+        "lib/net20/FSharp.Core.sigdata",
+        "lib/net20/FSharp.Core.xml",
+        "lib/net40/FSharp.Core.dll",
+        "lib/net40/FSharp.Core.optdata",
+        "lib/net40/FSharp.Core.sigdata",
+        "lib/net40/FSharp.Core.xml",
+        "lib/netstandard1.6/FSharp.Core.dll",
+        "lib/netstandard1.6/FSharp.Core.optdata",
+        "lib/netstandard1.6/FSharp.Core.runtimeconfig.json",
+        "lib/netstandard1.6/FSharp.Core.sigdata",
+        "lib/portable-net45+monoandroid10+monotouch10+xamarinios10/FSharp.Core.dll",
+        "lib/portable-net45+monoandroid10+monotouch10+xamarinios10/FSharp.Core.optdata",
+        "lib/portable-net45+monoandroid10+monotouch10+xamarinios10/FSharp.Core.sigdata",
+        "lib/portable-net45+monoandroid10+monotouch10+xamarinios10/FSharp.Core.xml",
+        "lib/portable-net45+netcore45+wp8/FSharp.Core.dll",
+        "lib/portable-net45+netcore45+wp8/FSharp.Core.optdata",
+        "lib/portable-net45+netcore45+wp8/FSharp.Core.sigdata",
+        "lib/portable-net45+netcore45+wp8/FSharp.Core.xml",
+        "lib/portable-net45+netcore45+wpa81+wp8/FSharp.Core.dll",
+        "lib/portable-net45+netcore45+wpa81+wp8/FSharp.Core.optdata",
+        "lib/portable-net45+netcore45+wpa81+wp8/FSharp.Core.sigdata",
+        "lib/portable-net45+netcore45+wpa81+wp8/FSharp.Core.xml",
+        "lib/portable-net45+netcore45/FSharp.Core.dll",
+        "lib/portable-net45+netcore45/FSharp.Core.optdata",
+        "lib/portable-net45+netcore45/FSharp.Core.sigdata",
+        "lib/portable-net45+netcore45/FSharp.Core.xml",
+        "lib/portable-net45+sl5+netcore45/FSharp.Core.dll",
+        "lib/portable-net45+sl5+netcore45/FSharp.Core.optdata",
+        "lib/portable-net45+sl5+netcore45/FSharp.Core.sigdata",
+        "lib/portable-net45+sl5+netcore45/FSharp.Core.xml"
+      ]
+    },
     "Libuv/1.9.0": {
       "sha512": "RHkpYtFNj92EIgNwNzLwDmJYiG1GbkwMt2+Z5Hs4lrWvriNNPBnrwOx08r/ezaFrj9WJT1bpeC+xQtXEdaVqZg==",
       "type": "package",
@@ -3672,6 +3771,28 @@
         "lib/net452/Nancy.xml",
         "lib/netstandard1.6/Nancy.dll",
         "lib/netstandard1.6/Nancy.xml"
+      ]
+    },
+    "Nancy.Session.InMemory/0.9.1-pre": {
+      "sha512": "yHO0adD1I02KB85GGTpOYruOpU2KXleUbiWbmZGbhemjblAjFJYeoz4vSBwvG6MqjQJzT1x58xJ9odD5KW9FTw==",
+      "type": "package",
+      "path": "Nancy.Session.InMemory/0.9.1-pre",
+      "files": [
+        "Nancy.Session.InMemory.0.9.1-pre.nupkg.sha512",
+        "Nancy.Session.InMemory.nuspec",
+        "lib/net452/Nancy.Session.InMemory.dll",
+        "lib/netstandard1.6/Nancy.Session.InMemory.dll"
+      ]
+    },
+    "Nancy.Session.Persistable/0.9.1-pre": {
+      "sha512": "ym9P+MTQMUtdGOp0wqmu5OZ4yxbKF2FpLrFFD8x80RvaonusbaXStMcqSk4Gw5LjcMnjVWf/ovcADXDl5mWNUg==",
+      "type": "package",
+      "path": "Nancy.Session.Persistable/0.9.1-pre",
+      "files": [
+        "Nancy.Session.Persistable.0.9.1-pre.nupkg.sha512",
+        "Nancy.Session.Persistable.nuspec",
+        "lib/net452/Nancy.Session.Persistable.dll",
+        "lib/netstandard1.6/Nancy.Session.Persistable.dll"
       ]
     },
     "NETStandard.Library/1.6.0": {
@@ -8395,12 +8516,15 @@
   },
   "projectFileDependencyGroups": {
     "": [
+      "FSharp.Core >= 4.0.1.7-alpha",
       "Microsoft.AspNetCore.Owin >= 1.0.0",
       "Microsoft.AspNetCore.Server.Kestrel >= 1.0.0",
       "Microsoft.AspNetCore.Session >= 1.0.0",
       "Microsoft.Extensions.Logging.Console >= 1.0.0",
       "Microsoft.NETCore.App >= 1.0.0",
-      "Nancy >= 2.0.0-barneyrubble"
+      "Nancy >= 2.0.0-barneyrubble",
+      "Nancy.Session.InMemory >= 0.9.1-pre",
+      "Nancy.Session.Persistable >= 0.9.1-pre"
     ],
     ".NETCoreApp,Version=v1.0": []
   },

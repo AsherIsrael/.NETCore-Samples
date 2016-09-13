@@ -1,9 +1,10 @@
 using System;
-// using System.Collections.Generic;
+using System.Collections.Generic;
 using Nancy;
 
 namespace NancyNinjaGold
 {
+
     public class GoldModule : NancyModule
     {
 
@@ -11,18 +12,17 @@ namespace NancyNinjaGold
         {
             Get("/", args =>
             {
-                if(Session["Info"] == null)
+                if(Session["Gold"] == null)
                 {
-                    Console.WriteLine("In here");
-                    Session["Info"] = new SessionObject();
-                    // (Session["Info"] as SessionObject).Gold = 0;
-                    // (Session["Info"] as SessionObject).Activities = new List<string>();
+                    Session["Gold"] = 0;
+                    Session["Activities"] = new List<string>();
                 }
-                ViewBag.Info = (SessionObject)Session["Info"];
-                Console.WriteLine(((SessionObject)Session["Info"]).Gold);
-                return View["index"];
+                ViewBag.Gold = Session["Gold"];
+
+                return View["index", Session["Activities"]];
+
             });
-            
+
             Post("/process_money", args =>
             {
                 string Building = Request.Form.Building;
@@ -45,23 +45,27 @@ namespace NancyNinjaGold
                         GoldEarned = Rand.Next(-50, 50);
                         break;
                 }
-                // Console.WriteLine(GoldEarned);
-                ((SessionObject)Session["Info"]).Gold += GoldEarned;
-                // Console.WriteLine((Session["Info"] as SessionObject).Gold);
+                Session["Gold"] = (int)Session["Gold"] + GoldEarned;
 
+                int AbsGoldEarned = Math.Abs(GoldEarned);
                 string activity = "";
-
                 if(GoldEarned < 0)
                 {
-                    activity = $"Entered the {Building} and lost {GoldEarned} gold!";
+                    activity = $"Entered the {Building} and lost {AbsGoldEarned} gold!";
                 }
                 else
                 {
-                    activity = $"Entered the {Building} and made {GoldEarned} gold!";
+                    activity = $"Entered the {Building} and made {AbsGoldEarned} gold!";
                 }
 
-                (Session["Info"] as SessionObject).Activities.Add(activity);
+                ((List<string>)Session["Activities"]).Insert(0, activity);
 
+                return Response.AsRedirect("/");
+            });
+
+            Get("/reset", args =>
+            {
+                Session.DeleteAll();
 
                 return Response.AsRedirect("/");
             });

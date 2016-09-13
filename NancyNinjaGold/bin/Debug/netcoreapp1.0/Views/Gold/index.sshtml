@@ -9,7 +9,7 @@
         <div class="wrapper">
 			<p class="inline">Your Gold: </p>
 			<div class="gold_box">
-				<p>@ViewBag.Info.Gold</p>
+				<p>@ViewBag.Gold</p>
 			</div>
 			<br>
             <a href="/reset"><button>Reset</button></a>
@@ -49,9 +49,9 @@
 			<div class="activity_log">
 				<p>Activities:</p>
 				<div class="log">
-                    @Each.Context.Info.Activities
-                        <p>@Current</p>
-                    @EndEach
+				@Each
+					<p>@Current</p>
+				@EndEach
 				</div>
 			</div>
 		</div>
