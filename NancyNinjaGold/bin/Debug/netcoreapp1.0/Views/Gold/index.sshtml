@@ -50,7 +50,7 @@
 				<p>Activities:</p>
 				<div class="log">
 				@Each
-					<p>@Current</p>
+					@Current
 				@EndEach
 				</div>
 			</div>

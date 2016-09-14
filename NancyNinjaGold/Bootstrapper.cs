@@ -4,7 +4,6 @@ using Nancy.Bootstrapper;
 using Nancy.TinyIoc;
 using Nancy.Session.InMemory;
 using Nancy.Configuration;
-// using Nancy.InMemorySessions;
 
 namespace NancyNinjaGold
 {
@@ -17,9 +16,8 @@ namespace NancyNinjaGold
 
         protected override void ApplicationStartup(TinyIoCContainer container, IPipelines pipelines)
         {
-            // base.ApplicationStartup(container, pipelines);
             PersistableSessions.Enable(pipelines, new InMemorySessionConfiguration());
-            // InMemorySessions.Enable(pipelines);
+
         }
     }
 }

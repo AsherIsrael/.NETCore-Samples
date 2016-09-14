@@ -8,6 +8,7 @@ namespace NancyNinjaGold
     public class GoldModule : NancyModule
     {
 
+
         public GoldModule()
         {
             Get("/", args =>
@@ -51,11 +52,11 @@ namespace NancyNinjaGold
                 string activity = "";
                 if(GoldEarned < 0)
                 {
-                    activity = $"Entered the {Building} and lost {AbsGoldEarned} gold!";
+                    activity = $"<p class=\"red\">Entered the {Building} and lost {AbsGoldEarned} gold!</p>";
                 }
                 else
                 {
-                    activity = $"Entered the {Building} and made {AbsGoldEarned} gold!";
+                    activity = $"<p class=\"green\">Entered the {Building} and made {AbsGoldEarned} gold!</p>";
                 }
 
                 ((List<string>)Session["Activities"]).Insert(0, activity);
