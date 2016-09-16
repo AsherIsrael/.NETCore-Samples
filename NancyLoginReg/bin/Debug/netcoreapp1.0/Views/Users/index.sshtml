@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Nancy Login and Registration</title>
+        <link rel="stylesheet" href="Content/style.css"/>
+    </head>
+    <body>
+        @Each
+            @Current
+        @EndEach
+        <form class="blockForm" action="/register" method="post">
+            First Name: <input class="formElement" name="FirstName" type="text"/>
+            Last Name: <input class="formElement" name="LastName" type="text"/>
+            Email: <input class="formElement" name="Email" type="text"/>
+            Password: <input class="formElement" name="Password" type="password"/>
+            Confirm Password: <input class="formElement" name="PasswordConfirm" type="password"/>
+            <button type="submit">Register</button>
+        </form>
+        <form class="blockForm" action="/login" method="post">
+            Email: <input class="formElement" name="Email" type="text"/>
+            Password: <input class="formElement" name="Password" type="password"/>
+            <button type="submit">Login</button>
+        </form>
+    </body>
+</html>
