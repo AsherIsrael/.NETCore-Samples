@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Index</title>
+        <link rel="stylesheet" href="~/css/style.css"/>
+    </head>
+    <body>
+        <h1>Here are the awesome quotes!</h1>
+        @Each
+            <p>@Current.QuoteText</p>
+            <p class="username">-@Current.Name at @Current.CreatedAt</p>
+            <hr>
+        @EndEach
+    </body>
+</html>

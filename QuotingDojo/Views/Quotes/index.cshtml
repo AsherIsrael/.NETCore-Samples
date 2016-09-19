@@ -14,7 +14,7 @@
             foreach ( var quote in @ViewData["quotes"] as Dictionary<string, object>[])
             {
                 <p>@quote["Quote"]</p>
-                <p class="username">-@quote["Name"] at @quote["createdAt"]</p>
+                <p class="username">-@quote["Name"] at @quote["CreatedAt"]</p>
                 <hr>
             }
         }

@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>New</title>
+        <link rel="stylesheet" href="~/css/style.css"/>
+    </head>
+    <body>
+        <h1>Welcome to Quoting Dojo</h1>
+        @Each
+            <p>@Current</p>
+        @EndEach
+        <form action="/quotes" method="post">
+            <input class="formElement" type="text" name="name" placeholder="Your name..."/>
+            <textarea class="formElement" name="quote" placeholder="Your Quote..."></textarea>
+            <button class="formElement" type="submit">Add my quote!</button>
+        </form>
+        <a class="formElement" href="/quotes"><button>Skip to quotes!</button></a>
+    </body>
+</html>

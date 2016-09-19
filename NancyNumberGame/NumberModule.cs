@@ -18,6 +18,8 @@ namespace NancyNumberGame
                     
                     Session["TheNumber"] = box;
                 }
+                Console.WriteLine("In index");
+                Console.WriteLine((Session["TheNumber"] as SessionWrapper).Number);
 
                 if(Session["result"] == null)
                 {
@@ -43,6 +45,8 @@ namespace NancyNumberGame
             Post("/guess", args =>
             {
                 int TheNumber = (Session["TheNumber"] as SessionWrapper).Number;
+                Console.WriteLine("IN guess");
+                Console.WriteLine(TheNumber);
                 var guess = (int)Request.Form.Number;
                 if(guess > TheNumber)
                 {
@@ -56,6 +60,7 @@ namespace NancyNumberGame
                 {
                     Session["result"] = "You Got It!";
                 }
+
 
                 return Response.AsRedirect("/");
             });

@@ -2,7 +2,7 @@
   "buildOptions": {
     "debugType": "portable",
     "emitEntryPoint": true,
-    "copyToOutput": ["Views/Number/*", "Content/*"]
+    "copyToOutput": ["Views/Quotes/*"]
   },
   "dependencies": {
     "Microsoft.NETCore.App": {
@@ -12,7 +12,11 @@
     "Nancy": "2.0.0-barneyrubble",
     "Microsoft.AspNetCore.Server.Kestrel": "1.0.0",
     "Microsoft.AspNetCore.Owin": "1.0.0",
-    "Microsoft.Extensions.Logging.Console": "1.0.0"
+    "Microsoft.Extensions.Logging.Console": "1.0.0",
+    "MySqlConnector": "0.1.0-alpha12",
+    "Nancy.Session.InMemory": "0.9.1-pre",
+    "Nancy.Session.Persistable": "0.9.1-pre",
+    "FSharp.Core": "4.0.1.7-alpha" 
   },
   "frameworks": {
     "netcoreapp1.0": {

@@ -42,7 +42,7 @@ namespace QuotingDojo.Controllers
             }
             else
             {
-                string query = $"INSERT INTO quotes (Name, Quote, createdAt) VALUES ('{name}', '{quote}', NOW())";
+                string query = $"INSERT INTO quote (Name, QuoteText, CreatedAt) VALUES ('{name}', '{quote}', NOW())";
                 DbConnector.ExecuteQuery(query);
                 return RedirectToAction("Index");
             }
@@ -52,7 +52,7 @@ namespace QuotingDojo.Controllers
         public IActionResult Index()
         {
             Console.WriteLine("index");
-            string query = "SELECT * FROM quotes ORDER BY createdAt DESC";
+            string query = "SELECT * FROM quote ORDER BY CreatedAt DESC";
             List<Dictionary<string, object>> quotes = DbConnector.ExecuteQuery(query);
             ViewData["quotes"] = quotes.ToArray();
             return View();
