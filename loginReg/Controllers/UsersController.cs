@@ -14,7 +14,7 @@ namespace LoginReg.Controllers
         public IActionResult New()
         {
             Console.WriteLine("new");
-            if(TempData["Errors"] != null )
+            if(TempData["Errors"] != null)
             {
                 ViewData["Errors"] = TempData["Errors"];
             }

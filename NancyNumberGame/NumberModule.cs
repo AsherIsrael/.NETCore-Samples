@@ -13,13 +13,11 @@ namespace NancyNumberGame
                 if(Session["TheNumber"] == null)
                 {
                     int Num = new Random().Next(1, 100);
-                    SessionWrapper box = new SessionWrapper();
-                    box.Number = Num;
+                    SessionWrapper Box = new SessionWrapper();
+                    Box.Number = Num;
                     
                     Session["TheNumber"] = box;
                 }
-                Console.WriteLine("In index");
-                Console.WriteLine((Session["TheNumber"] as SessionWrapper).Number);
 
                 if(Session["result"] == null)
                 {
@@ -30,10 +28,13 @@ namespace NancyNumberGame
                 else
                 {
                     ViewBag.LastGuess = Session["result"];
-                    if((string)Session["result"] == "You Got It!"){
+                    if((string)Session["result"] == "You Got It!")
+                    {
                         ViewBag.Class = "correct";
                         ViewBag.Restart = true;
-                    }else{
+                    }
+                    else
+                    {
                         ViewBag.Class = "wrong";
                         ViewBag.Restart = false;
                     }
@@ -45,14 +46,12 @@ namespace NancyNumberGame
             Post("/guess", args =>
             {
                 int TheNumber = (Session["TheNumber"] as SessionWrapper).Number;
-                Console.WriteLine("IN guess");
-                Console.WriteLine(TheNumber);
-                var guess = (int)Request.Form.Number;
-                if(guess > TheNumber)
+                var Guess = (int)Request.Form.Number;
+                if(Guess > TheNumber)
                 {
                     Session["result"] = "Too High";
                 }
-                else if(guess < TheNumber)
+                else if(Guess < TheNumber)
                 {
                     Session["result"] = "Too Low";
                 }
