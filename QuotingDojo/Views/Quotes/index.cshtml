@@ -1,6 +1,4 @@
-@{
-    
-}
+
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -13,7 +11,7 @@
         @{
             foreach ( var quote in @ViewData["quotes"] as Dictionary<string, object>[])
             {
-                <p>@quote["Quote"]</p>
+                <p>@quote["QuoteText"]</p>
                 <p class="username">-@quote["Name"] at @quote["CreatedAt"]</p>
                 <hr>
             }
